@@ -1,0 +1,14 @@
+version: 2
+
+sources:
+  - name: apcalcbc
+    database: project-kilkenny
+    schema: apcalcbc
+    tables:
+      - name: 1718_q1_apcalcbc_testinfo
+      - name: 1718_q2_apcalcbc_testinfo
+      - name: 1718_q3_apcalcbc_testinfo
+      - name: 1718_q3_apcalcbc_responses
+
+    quoting:
+      database: true
