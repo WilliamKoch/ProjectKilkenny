@@ -5,6 +5,7 @@ sources:
     database: project-kilkenny
     schema: apcalcbc
     tables:
+      - name: 1718_apcalcbc_scores
       - name: 1718_q1_apcalcbc_testinfo
       - name: 1718_q2_apcalcbc_testinfo
       - name: 1718_q3_apcalcbc_testinfo
