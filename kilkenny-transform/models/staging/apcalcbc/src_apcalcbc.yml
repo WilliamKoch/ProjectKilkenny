@@ -8,7 +8,9 @@ sources:
       - name: 1718_q1_apcalcbc_testinfo
       - name: 1718_q2_apcalcbc_testinfo
       - name: 1718_q3_apcalcbc_testinfo
+      - name: 1718_q1_apcalcbc_responses
+      - name: 1718_q2_apcalcbc_responses
       - name: 1718_q3_apcalcbc_responses
 
     quoting:
-      database: true
+      database: false
