@@ -1,16 +1,16 @@
 with source as (
 
-    select * from {{ source('apcalcbc', '1718_q3_apcalcbc_responses') }}
+    select * from {{ source('apcalcbc', '1718_q2_apcalcbc_responses') }}
 
 ),
 
 renamed as (
 
     select
-        -- Student Info
-        local_student_id as student_id,
+    -- student info
+        id as student_id,
 
-        -- Responses
+    -- responses
         q1,
         q2,
         q3,
@@ -67,31 +67,22 @@ renamed as (
         o3a,
         o3b,
         o3c,
-        o3d,
         o4a,
         o4b,
         o4c,
         o5a,
         o5b,
         o5c,
-        o5d,
         o6a,
         o6b,
         o6c,
         o6d
 
         -- ignored
-        -- date_taken,
-        -- points_correct,
-        -- points_possible,
-        -- percent_correct,
-        -- performance_band_label,
-        -- student_last_name,
-        -- student_first_name,
-        -- student_grade_level,
-        
+        -- first_last,
+
     from source
 
-) 
+)
 
 select * from renamed
