@@ -38,10 +38,12 @@ unioned as (
     from q3_testinfo
 ),
 
-final as (
+recasted as (
     select 
-        {{ dbt_utils.surrogate_key(['question_number','quarter','year'])}} as question_id,
-        question_number,
+        case 
+            when question_type = 'MC' then concat('q',question_number)
+            when question_type = 'OER' then lower(question_number)
+        end as question_number,
         quarter,
         year,
         question_type,
@@ -52,6 +54,13 @@ final as (
         secondary_standard
     from unioned
     order by question_number
+),
+
+keyed as (
+    select
+       {{ dbt_utils.surrogate_key(['question_number','quarter','year'])}} as question_id,
+       *
+    from recasted
 )
 
-select * from final
+select * from keyed

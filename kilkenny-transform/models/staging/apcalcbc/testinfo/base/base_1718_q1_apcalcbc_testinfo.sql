@@ -8,7 +8,10 @@ renamed as (
 
     select
         -- ids
-        question_number,
+        case 
+            when question_type = 'MC' then concat('q',question_number)
+            when question_type = 'OER' then lower(question_number)
+        end as question_number,
 
         -- standards
         question_type,

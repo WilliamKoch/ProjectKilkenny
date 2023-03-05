@@ -43,6 +43,7 @@ unioned as (
 final as (
     select 
         {{ dbt_utils.surrogate_key(['student_id','question','quarter','year'])}} as response_id,
+        {{ dbt_utils.surrogate_key(['question','quarter','year'])}} as question_id,
         student_id,
         question,
         quarter,
